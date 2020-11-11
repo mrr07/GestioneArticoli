@@ -154,7 +154,6 @@ public class CategoriaDAOImpl extends AbstractMySQLDAO implements CategoriaDAO {
             
             return preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            String msg = "Impossibile eseguire";
             return 0;
         } 
 	}
