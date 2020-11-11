@@ -36,7 +36,7 @@
 		<c:set var = "nomeRicerca" scope = "request" value = "${requestScope.nomeRicerca}"/>
 		<p><a class="btn btn-primary btn-lg" href="DeleteCategoriaServlet?IdDaEliminare=<c:out value = "${categoria.id}"/>&ruoloUtente=<c:out value = "${ruolo}"/>&nomeRicerca=<c:out value = "${nomeRicerca}"/>" role="button">Conferma &raquo; </a></p>
 		<p><a class="btn btn-primary btn-lg" href="ListaCategorieServlet?ruoloUtente=<c:out value = "${ruolo}"/>" role="button">Annulla &raquo;</a></p>
-</main>
-<jsp:include page="./footer.jsp" />
+    </main>
+	<jsp:include page="./footer.jsp" />
 </body>
 </html>

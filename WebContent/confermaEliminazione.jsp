@@ -28,10 +28,12 @@
 		    <span aria-hidden="true">&times;</span>
 		  </button>
 		</div>
+		
 		<c:set var = "ruolo" scope = "session" value = "${requestScope.ruoloUtente}"/>
 		<c:if test="${ ruolo == null }">
 			<c:redirect url="/index.jsp"/>
 		</c:if>
+		
 		<c:set var = "articolo" scope = "request" value = "${requestScope.EliminaID}"/>
 		<p><a class="btn btn-primary btn-lg" href="DeleteArticoloServlet?IdDaEliminare=<c:out value = "${articolo.id}"/>&ruoloUtente=<c:out value = "${ruolo}"/>" role="button">Conferma &raquo; </a></p>
 		<p><a class="btn btn-primary btn-lg" href="ListArticoliServlet?ruoloUtente=<c:out value = "${ruolo}"/>" role="button">Annulla &raquo;</a></p>
