@@ -3,6 +3,7 @@ package it.gestionearticoli.web.servlet.articolo;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,9 +25,11 @@ public class ListArticoliServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//preparo la lista di articoli
 		String ruolo = request.getParameter("ruoloUtente");
-		if(ruolo == null) {
+		
+		if(ruolo == null || ruolo == "" || Pattern.matches("[a-zA-Z]+", ruolo) == false) {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
+		
 		
 		try {
 			List<Articolo> lista = new ArrayList<>();

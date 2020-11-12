@@ -1,7 +1,7 @@
 package it.gestionearticoli.web.servlet.categoria;
 
 import java.io.IOException;
-
+import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +33,7 @@ public class PrepareSearchCategoriaServlet extends HttpServlet {
 		
 		String ruolo = request.getParameter("ruoloUtente");
 		
-		if(ruolo == null) {
+		if(ruolo == null || ruolo == "" || Pattern.matches("[a-zA-Z]+", ruolo) == false) {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		
